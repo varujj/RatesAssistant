@@ -1,0 +1,25 @@
+<div class="currency-info">
+  <div class="form-group">
+    <label>Currencies</label>
+    <select class="form-control" [(ngModel)]="selectedCurrency">
+      <option *ngFor="let currency of availableCurrencies" [value]="currency">
+        {{ currency }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Date</label>
+    <input [(ngModel)]="selectedDate" class="form-control" type="date" />
+  </div>
+
+  <div class="form-group">
+    <button (click)="getExchangeRate()" class="btn btn-success">
+      Display rate
+    </button>
+  </div>
+
+  <div class="form-group">
+    <h4>{{ displayedExchangeRate }}</h4>
+  </div>
+</div>
